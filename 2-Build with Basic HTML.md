@@ -35,9 +35,82 @@ position="x y z"          物体的位置
 rotation="x y z"          物体旋转角度
 
 scale="x y z"             物体缩放
+
+src="/"                   引入资源，可以引入图片或视频
 ```
+举个栗子
+```
+<a-scene>
+  <a-box width="0.45" depth="0.45" height="0.01" opacity="1" position="0.15 1.4 1" rotation="100 -18 180" src="1.jpg"></a-box>
+  <a-sky src="bg.jpg"></a-sky>
+</a-scene>
+```
+<h3>使物体运动起来</h3>
+```
+<a-scene>
+  <a-assets>
+    <img id="texture" src="1.jpg">
+  </a-assets>
+  <a-box width="0.5" height="0.01" depth="0.5"
+         position="-1 2 -2" rotation="0 0 45" 
+         src="#texture">
+    <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+  </a-box>
+  <a-sky src="bg.jpg"></a>
+</a-scene>
+```
+属性
+```
+要使box运动就要添加<a-animation>子标签
 
+attribute="" 需要运动的属性
 
+repeat="" 动作循环次数
+
+begin="click"   触发某个动作开始运动
+
+to=""   运动结果
+
+```
+栗子
+```html
+  <a-assets>
+    <img id="texture" src="1.jpg">
+  </a-assets>
+  <a-box width="0.5" height="0.01" depth="0.5"
+         position="-1 2 -2" rotation="0 0 45" 
+         src="#texture" scale-on-click="to: 3 3 3">
+         <!--运动为旋转      触发点击事件开始运动  无限次数    y轴旋转360-->
+    <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+  </a-box>
+  <!--为场景添加一个准心 准心对准目标物体才能互动（如点击等）-->
+  <a-camera position="0 1.8 0" src="video/2.jpg">
+    <a-cursor color="blue"></a-cursor>
+  </a-camera>
+  <a-sky src="bg.jpg"></a>
+</a-scene>
+```
+<h2>添加光照</h2>
+
+```html
+<a-scene>
+  <a-assets>
+    <img id="texture" src="1.jpg">
+  </a-assets>
+  <a-box width="0.5" height="0.01" depth="0.5"
+         position="-1 2 -2" rotation="0 0 45" 
+         src="#texture" scale-on-click="to: 3 3 3">
+    <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
+  </a-box>
+   <a-light type="spot" color="green" position="1.5 0.5 0" look-at="a-box"></a-light>
+  <a-light type="point" color="red" position="0 0.5 0.5"></a-light>
+  <a-camera position="0 1.8 0" src="video/2.jpg">
+    <a-cursor color="blue"></a-cursor>
+  </a-camera>
+  <a-sky src="bg.jpg"></a>
+</a-scene>
+
+```
 
 
 
