@@ -90,7 +90,7 @@ to=""   运动结果
   <a-sky src="bg.jpg"></a>
 </a-scene>
 ```
-<h2>添加光照</h2>
+<h2>添加光照效果</h2>
 
 ```html
 <a-scene>
@@ -102,6 +102,7 @@ to=""   运动结果
          src="#texture" scale-on-click="to: 3 3 3">
     <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation>
   </a-box>
+  <!---->
    <a-light type="spot" color="green" position="1.5 0.5 0" look-at="a-box"></a-light>
   <a-light type="point" color="red" position="0 0.5 0.5"></a-light>
   <a-camera position="0 1.8 0" src="video/2.jpg">
@@ -111,6 +112,31 @@ to=""   运动结果
 </a-scene>
 
 ```
+
+<h3>组件</h3>
+
+为A-Frame添加组件：
+
+一个实体通过一个HTML元素形式展现（即代表<a-entity>）。
+
+组件是通过HTML属性表示。
+
+组件特性由通过HTML属性定义值表示。
+
+栗子
+```html
+<!--geometry表示实体的几何属性如宽高，形状等等   
+    material表示实体的本身特性，如颜色，透明度等
+-->
+<a-entity geometry="primitive: sphere; radius: 1.5"
+          material="color: tomato; metalness: 0.7"></a-entity>
+```
+
+
+
+
+
+
 
 
 
