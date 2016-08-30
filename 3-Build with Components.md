@@ -24,7 +24,7 @@
 <body>
 	<a-scene>
 		<a-assets>
-		  <!--这里要这么写-->
+		  <!--这里要这么写，引入3D模型资源-->
 			<a-asset-item id="myPlyModel" src="md/chr_rain.ply"></a-asset-item>
 		</a-assets>
 		<a-entity ply-model="src: #myPlyModel" position="0 0.5 -2" scale="0.1 0.1 0.1" rotation="270 180 180"></a-entity>
