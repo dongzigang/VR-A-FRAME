@@ -37,6 +37,10 @@ rotation="x y z"          物体旋转角度
 scale="x y z"             物体缩放
 
 src="/"                   引入资源，可以引入图片或视频
+
+geometry="primitive: sphere; radius: 1.5"     几何属性
+
+material="color: tomato; metalness: 0.7"       实体特性     
 ```
 举个栗子
 ```
