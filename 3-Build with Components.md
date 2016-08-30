@@ -10,7 +10,7 @@
 3.编写自定义组件来完成我们想要的。
 
 <h3>引入3d模型</h3>
-
+可以引入 .ply   和   .obj   文件（可能还有其他）
 ```html
 <!doctype html>
 <html lang="en">
