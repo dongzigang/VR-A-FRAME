@@ -232,6 +232,37 @@ entity.play（）;
           // All previous properties for the material component (besides the color)  will be unaffected.
           entity.setAttribute('material', 'color', 'crimson');
           
+<h3>setObject3D (type, obj)</h3>
+
+没接触过three.js不是很理解
+
+          AFRAME.registerComponent('example-orthogonal-camera', {
+            update: function () {
+              this.el.setObject3D('camera', new THREE.OrthogonalCamera());
+            }
+          });
+
+<h3>removeAttribute (attr)</h3>
+移除属性
+
+          entity.removeAttribute('sound');  // The entity will no longer play sound.
+          
+<h3>removeObject3D (type)</h3>
+
+          AFRAME.registerComponent('example-light', {
+            update: function () {
+              this.el.setObject3D('light', new THREE.Light());
+              // Light is now part of the scene.
+              // object3DMap.light is now a THREE.Light() object.
+            },
+            remove: function () {
+              this.el.removeObject3D('light');
+              // Light is now removed from the scene.
+              // object3DMap.light is now null.
+            }
+          });
+          
+
 
 
 
