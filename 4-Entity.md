@@ -263,7 +263,18 @@ entity.play（）;
           });
           
 
+<h3>removeState (stateName)</h3>
+移除状态
 
+          entity.addEventListener('stateremoved', function (evt) {
+            if (evt.state === 'selected') {
+              console.log('Entity no longer selected.');
+            }
+          });
+          entity.addState('selected');
+          entity.is('selected');  // >> true
+          entity.removeState('selected');
+          entity.is('selected');  // >> false
 
 
 
