@@ -54,11 +54,16 @@ querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素�
 
       document.querySelector('a-entity[sound]').components.sound.pause();
       
-<h4>isPlaying</h4>
+<h3>isPlaying</h3>
 不论该实体是激活状态还是播放状态。如果实体被暂停，那么isPlaying值就是false。
 
-<h4>object3D</h4>
-object3D是一个THREE.Group对象包含了不同类型的THREE.Object3D，如cameras, meshes, lights, or sounds
+<h3>object3D</h3>
+<a-entity>.object3D是一个 three.js Object3D形式的引用，更特别的但<a-entity>.object3D是一个 THREE.Group对象，还包含了不同类型的THREE.Object3D，如cameras, meshes, lights, or sounds
+
+          // Gaining access to the internal three.js scene graph.
+          var groupObject3D = document.querySelector('a-entity').object3D;
+          console.log(groupObject3D.parent);
+          console.log(groupObject3D.children);
 
 不同类型的Object3Ds，可以通过object3DMap被访问。
 
