@@ -16,6 +16,7 @@
 var el =document.("#mario")
 ```
 知识点补充<b>querySelector()</b>
+
 querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。
 
 注意： querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。
