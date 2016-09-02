@@ -95,7 +95,7 @@ object3DMap是一个js对象用来访问不同类型的THREE.Object3D
 
 addState为实例添加一个状态。
 
-···
+```javascript
 //二级DOM
 entity.addEventListener('stateadded', function (evt) {
   if (evt.state === 'selected') {
@@ -106,7 +106,7 @@ entity.addEventListener('stateadded', function (evt) {
 entity.addState('selected');
 //  .is   用来检查
 entity.is('selected');  // >> true
-···
+```
 
 <h3>emit</h3>
 
