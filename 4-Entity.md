@@ -44,9 +44,9 @@ querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素�
 ```
 <h3>特性Properties</h3>
 <h4>组件</h4>
-一旦我们有了一个实体，我们可以访问所有的属性和方法，具体介绍如下的。
+<a-entity>.components 是一个组件附加到实体的对象，它给我们一个通道去访问所有的实体组件，包括他们的数据，方法和API
 
-获取到实体的DOM节点后，还可以进一步获取其节点属性
+例如我们想获取一个实体的thre.js的camera对象或者material对象我们就可以使用它的components
 
     var camera = document.querySelector('a-entity[camera]').components.camera.camera;
     var material = document.querySelector('a-entity[material]').components.material.material;
