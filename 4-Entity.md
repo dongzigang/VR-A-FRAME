@@ -276,9 +276,22 @@ entity.play（）;
           entity.removeState('selected');
           entity.is('selected');  // >> false
 
+<h3>监听组件的改变</h3>
 
+我们可以使用componentchanged事件监听实体的改变
 
+          entity.addEventListener('componentchanged', function (evt) {
+            if (evt.detail.name === 'position') {
+              console.log('Entity has moved from', evt.detail.oldData, 'to', evt.detail.newData, '!');
+            }
+          });
+<h3>监听子组件的附加</h3>
 
+          entity.addEventListener('child-attached', function(evt) {
+            if (evt.detail.el.tagName.toLowerCase() === 'a-box') {
+              console.log('a box element has been attached');
+            };
+          ));
 
 
 
